@@ -1,12 +1,12 @@
 publish_mode: editorial_workflow
-media_folder: "public/admin/uploads" # Media files will be stored in the repo under static/images/uploads
-public_folder: "/images/uploads" # The src attribute for uploaded media will begin with /images/uploads
+media_folder: "public/images" 
+public_folder: "/images" 
 backend:
   name: github
   repo: aboumicho/furreur_website
   branch: master 
 collections:
-  - name: "manteau" # Used in routes, e.g., /admin/collections/blog
+  - name: "manteau" # Used in routes, e.g., /admin/collections/manteau
     label: "Manteau" # Used in the UI
     folder: "clothes/manteau" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
@@ -17,6 +17,6 @@ collections:
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Featured Image", name: "thumbnail", widget: "image"}
       #- {label: "Rating (scale of 1-5)", name: "rating", widget: "number"}
-      - {label: "Sizes", name: "sizes", widget: "list", default: ["small"]}
+      - {label: "Sizes", name: "sizes", widget: "list", default: ["small"], allow_add: true}
       - {label: "Colors", name: "colors", widget: "list", default: ["black"]}
       - {label: "Body", name: "body", widget: "markdown"}
